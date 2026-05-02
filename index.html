@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      window.FontAwesomeConfig = { autoReplaceSvg: 'nest' };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #1a1b23;
+        color: #ffffff;
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      .bg-brand-gradient {
+        background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%);
+      }
+      .text-brand {
+        color: #8B5CF6;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dark: {
+                DEFAULT: '#1a1b23',
+                surface: '#252631',
+                elevated: '#2d2e3b',
+                border: '#3a3b4a'
+              },
+              brand: {
+                purple: '#8B5CF6',
+                blue: '#3B82F6',
+                green: '#10B981',
+                red: '#EF4444'
+              }
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-dark min-h-screen flex">
+    
+    <!-- Sidebar -->
+    <aside id="sidebar" class="w-64 bg-dark-surface border-r border-dark-border h-screen fixed left-0 top-0 overflow-y-auto hidden md:block">
+        <div class="p-6">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="w-8 h-8 rounded-lg bg-brand-gradient flex items-center justify-center">
+                    <i class="fa-solid fa-cube text-white text-sm"></i>
+                </div>
+                <h1 class="text-xl font-bold text-white">VFX System</h1>
+            </div>
+            
+            <nav class="space-y-6">
+                <div>
+                    <h2 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Foundation</h2>
+                    <ul class="space-y-1">
+                        <li><a href="#colors" class="block px-3 py-2 rounded-lg text-sm text-gray-300 hover:bg-dark-elevated hover:text-white transition-colors">Colors</a></li>
+                        <li><a href="#typography" class="block px-3 py-2 rounded-lg text-sm text-gray-300 hover:bg-dark-elevated hover:text-white transition-colors">Typography</a></li>
+                        <li><a href="#icons" class="block px-3 py-2 rounded-lg text-sm text-gray-300 hover:bg-dark-elevated hover:text-white transition-colors">Icons</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Components</h2>
+                    <ul class="space-y-1">
+                        <li><a href="#buttons" class="block px-3 py-2 rounded-lg text-sm text-gray-300 hover:bg-dark-elevated hover:text-white transition-colors">Buttons</a></li>
+                        <li><a href="#cards" class="block px-3 py-2 rounded-lg text-sm text-gray-300 hover:bg-dark-elevated hover:text-white transition-colors">Cards</a></li>
+                        <li><a href="#inputs" class="block px-3 py-2 rounded-lg text-sm text-gray-300 hover:bg-dark-elevated hover:text-white transition-colors">Inputs</a></li>
+                        <li><a href="#badges" class="block px-3 py-2 rounded-lg text-sm text-gray-300 hover:bg-dark-elevated hover:text-white transition-colors">Badges & Tags</a></li>
+                        <li><a href="#alerts" class="block px-3 py-2 rounded-lg text-sm text-gray-300 hover:bg-dark-elevated hover:text-white transition-colors">Alerts</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 md:ml-64 p-8">
+        <div class="max-w-6xl mx-auto space-y-16">
+            
+            <!-- Header -->
+            <header id="page-header" class="border-b border-dark-border pb-8">
+                <h1 class="text-4xl font-bold text-white mb-2">Design System</h1>
+                <p class="text-gray-400 text-lg">Complete documentation of UI components, tokens, and assets.</p>
+            </header>
+
+            <!-- Colors Section -->
+            <section id="colors">
+                <h2 class="text-2xl font-semibold text-white mb-6 border-b border-dark-border pb-2">Colors</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Brand Colors -->
+                    <div class="space-y-3">
+                        <h3 class="text-sm font-medium text-gray-400">Brand</h3>
+                        <div class="bg-brand-purple h-24 rounded-xl flex items-end p-3">
+                            <div>
+                                <div class="text-white font-medium text-sm">Purple</div>
+                                <div class="text-white/70 text-xs">#8B5CF6</div>
+                            </div>
+                        </div>
+                        <div class="bg-brand-blue h-24 rounded-xl flex items-end p-3">
+                            <div>
+                                <div class="text-white font-medium text-sm">Blue</div>
+                                <div class="text-white/70 text-xs">#3B82F6</div>
+                            </div>
+                        </div>
+                        <div class="bg-brand-gradient h-24 rounded-xl flex items-end p-3">
+                            <div>
+                                <div class="text-white font-medium text-sm">Gradient</div>
+                                <div class="text-white/70 text-xs">Purple to Blue</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backgrounds -->
+                    <div class="space-y-3">
+                        <h3 class="text-sm font-medium text-gray-400">Backgrounds</h3>
+                        <div class="bg-dark h-24 rounded-xl flex items-end p-3 border border-dark-border">
+                            <div>
+                                <div class="text-white font-medium text-sm">Dark Base</div>
+                                <div class="text-gray-400 text-xs">#1a1b23</div>
+                            </div>
+                        </div>
+                        <div class="bg-dark-surface h-24 rounded-xl flex items-end p-3 border border-dark-border">
+                            <div>
+                                <div class="text-white font-medium text-sm">Surface</div>
+                                <div class="text-gray-400 text-xs">#252631</div>
+                            </div>
+                        </div>
+                        <div class="bg-dark-elevated h-24 rounded-xl flex items-end p-3 border border-dark-border">
+                            <div>
+                                <div class="text-white font-medium text-sm">Elevated</div>
+                                <div class="text-gray-400 text-xs">#2d2e3b</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Semantic -->
+                    <div class="space-y-3">
+                        <h3 class="text-sm font-medium text-gray-400">Semantic</h3>
+                        <div class="bg-brand-green h-24 rounded-xl flex items-end p-3">
+                            <div>
+                                <div class="text-white font-medium text-sm">Success</div>
+                                <div class="text-white/70 text-xs">#10B981</div>
+                            </div>
+                        </div>
+                        <div class="bg-brand-red h-24 rounded-xl flex items-end p-3">
+                            <div>
+                                <div class="text-white font-medium text-sm">Danger</div>
+                                <div class="text-white/70 text-xs">#EF4444</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Typography Section -->
+            <section id="typography">
+                <h2 class="text-2xl font-semibold text-white mb-6 border-b border-dark-border pb-2">Typography</h2>
+                <div class="bg-dark-surface rounded-2xl border border-dark-border p-8 space-y-8">
+                    <div class="flex flex-col md:flex-row md:items-center gap-4 border-b border-dark-border pb-6">
+                        <div class="w-32 text-gray-400 text-sm">Display</div>
+                        <div class="text-5xl font-bold text-white">VFX Suite Pro</div>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:items-center gap-4 border-b border-dark-border pb-6">
+                        <div class="w-32 text-gray-400 text-sm">Heading 1</div>
+                        <div class="text-4xl font-bold text-white">Choose Your Plan</div>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:items-center gap-4 border-b border-dark-border pb-6">
+                        <div class="w-32 text-gray-400 text-sm">Heading 2</div>
+                        <div class="text-2xl font-semibold text-white">Plan Activated!</div>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:items-center gap-4 border-b border-dark-border pb-6">
+                        <div class="w-32 text-gray-400 text-sm">Heading 3</div>
+                        <div class="text-xl font-semibold text-white">Dimension Pro</div>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:items-center gap-4 border-b border-dark-border pb-6">
+                        <div class="w-32 text-gray-400 text-sm">Body Large</div>
+                        <div class="text-lg text-gray-300">Welcome to your professional VFX management dashboard.</div>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:items-center gap-4 border-b border-dark-border pb-6">
+                        <div class="w-32 text-gray-400 text-sm">Body Base</div>
+                        <div class="text-base text-gray-300">Select the perfect subscription for your creative workflow.</div>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:items-center gap-4">
+                        <div class="w-32 text-gray-400 text-sm">Body Small</div>
+                        <div class="text-sm text-gray-400">Your VFX Suite Professional subscription is now active.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Buttons Section -->
+            <section id="buttons">
+                <h2 class="text-2xl font-semibold text-white mb-6 border-b border-dark-border pb-2">Buttons</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-dark-surface rounded-2xl border border-dark-border p-6 space-y-6">
+                        <h3 class="text-sm font-medium text-gray-400 mb-4">Primary Actions</h3>
+                        <div class="space-y-4">
+                            <button class="w-full bg-brand-gradient text-white font-medium py-3 px-6 rounded-xl text-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-rocket"></i> Start Exploring
+                            </button>
+                            <button class="w-full bg-brand-purple text-white font-medium py-3 px-6 rounded-xl text-sm hover:bg-brand-purple/90 transition-colors">
+                                Next Step
+                            </button>
+                            <button class="w-full bg-brand-green text-white font-medium py-3 px-6 rounded-xl text-sm hover:bg-brand-green/90 transition-colors">
+                                Confirm Payment
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-dark-surface rounded-2xl border border-dark-border p-6 space-y-6">
+                        <h3 class="text-sm font-medium text-gray-400 mb-4">Secondary Actions</h3>
+                        <div class="space-y-4">
+                            <button class="w-full bg-dark-elevated border border-dark-border text-gray-300 font-medium py-3 px-6 rounded-xl text-sm hover:bg-dark-border transition-colors">
+                                Select Plan
+                            </button>
+                            <button class="w-full bg-transparent border border-gray-600 text-gray-300 font-medium py-3 px-6 rounded-xl text-sm hover:bg-white/5 transition-colors">
+                                View Receipt
+                            </button>
+                            <button class="w-full bg-dark-elevated text-white font-medium py-3 px-6 rounded-xl text-sm hover:bg-dark-border transition-colors flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-gear"></i> Manage Subscription
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-surface rounded-2xl border border-dark-border p-6 space-y-6 md:col-span-2">
+                        <h3 class="text-sm font-medium text-gray-400 mb-4">States & Sizes</h3>
+                        <div class="flex flex-wrap gap-4 items-center">
+                            <button class="bg-brand-purple text-white font-medium py-2 px-4 rounded-lg text-xs">Small</button>
+                            <button class="bg-brand-purple text-white font-medium py-3 px-6 rounded-xl text-sm">Medium</button>
+                            <button class="bg-brand-purple text-white font-medium py-4 px-8 rounded-xl text-base">Large</button>
+                            <button class="bg-brand-purple opacity-50 cursor-not-allowed text-white font-medium py-3 px-6 rounded-xl text-sm">Disabled</button>
+                            <button class="w-10 h-10 flex items-center justify-center rounded-full bg-dark-elevated hover:bg-dark-border transition-colors">
+                                <i class="fa-solid fa-arrow-right text-gray-300"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cards Section -->
+            <section id="cards">
+                <h2 class="text-2xl font-semibold text-white mb-6 border-b border-dark-border pb-2">Cards</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    
+                    <!-- Subscription Plan Card -->
+                    <div class="bg-dark-surface border border-dark-border rounded-2xl overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-16 h-16 rounded-xl overflow-hidden bg-dark-elevated">
+                                    <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/3cd631c248-185292260e8e6bd04d08.png" alt="abstract 3d blue creative dimension software icon, dark background" />
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-white">Dimension Pro</h3>
+                                    <p class="text-sm text-gray-400">Version 5.2</p>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <span class="text-3xl font-bold text-white">$29</span>
+                                <span class="text-gray-400 text-sm">/month</span>
+                            </div>
+                            <button class="w-full bg-dark-elevated hover:bg-dark-border border border-dark-border text-gray-300 font-medium py-3 rounded-xl transition-colors">
+                                Select Plan
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Success Card -->
+                    <div class="bg-[#132A1E] border border-brand-green/30 rounded-2xl p-6 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-4 opacity-10">
+                            <i class="fa-solid fa-check-circle text-8xl text-brand-green"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="w-10 h-10 rounded-full bg-brand-green/20 flex items-center justify-center">
+                                    <i class="fa-solid fa-check text-brand-green"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-white">Payment Confirmed</h3>
+                                    <p class="text-xs text-brand-green/80">Transaction ID: TXN-7K9M-2P4L</p>
+                                </div>
+                            </div>
+                            <div class="space-y-3 bg-black/20 rounded-xl p-4">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-400">Plan</span>
+                                    <span class="text-white font-medium">Professional</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-400">Amount Paid</span>
+                                    <span class="text-white font-medium">$88.00</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-400">Billing Cycle</span>
+                                    <span class="text-white font-medium">Annual</span>
+                                </div>
+                                <div class="border-t border-white/10 pt-3 mt-3 flex justify-between text-sm">
+                                    <span class="text-gray-400">Next Renewal</span>
+                                    <span class="text-brand-green font-medium">Dec 21, 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Badges & Tags Section -->
+            <section id="badges">
+                <h2 class="text-2xl font-semibold text-white mb-6 border-b border-dark-border pb-2">Badges & Tags</h2>
+                <div class="bg-dark-surface rounded-2xl border border-dark-border p-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-sm font-medium text-gray-400 mb-4">Status Badges</h3>
+                            <div class="flex flex-wrap gap-4">
+                                <span class="px-3 py-1 bg-brand-green/20 border border-brand-green/30 rounded-full text-xs font-medium text-brand-green flex items-center gap-1.5">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-brand-green"></span> Active
+                                </span>
+                                <span class="px-3 py-1 bg-brand-red/20 border border-brand-red/30 rounded-full text-xs font-medium text-brand-red flex items-center gap-1.5">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-brand-red"></span> Expired
+                                </span>
+                                <span class="px-3 py-1 bg-brand-blue/20 border border-brand-blue/30 rounded-full text-xs font-medium text-brand-blue flex items-center gap-1.5">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span> Pending
+                                </span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-medium text-gray-400 mb-4">Promotional Tags</h3>
+                            <div class="flex flex-wrap gap-4">
+                                <span class="px-2 py-1 bg-[#1A3B2B] text-brand-green text-xs font-semibold rounded">Save 20%</span>
+                                <span class="px-2 py-1 bg-brand-purple/20 text-brand-purple text-xs font-semibold rounded">Most Popular</span>
+                                <span class="px-2 py-1 bg-white/10 text-white text-xs font-semibold rounded">New</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Alerts & Feedback Section -->
+            <section id="alerts">
+                <h2 class="text-2xl font-semibold text-white mb-6 border-b border-dark-border pb-2">Alerts & Feedback</h2>
+                <div class="space-y-4">
+                    <div class="bg-brand-green/10 border border-brand-green/30 rounded-xl p-4 flex items-start gap-3">
+                        <i class="fa-solid fa-circle-check text-brand-green mt-0.5"></i>
+                        <div>
+                            <h4 class="text-sm font-semibold text-brand-green">Successfully Updated</h4>
+                            <p class="text-xs text-brand-green/80 mt-1">Your subscription plan has been successfully upgraded to Pro.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-brand-red/10 border border-brand-red/30 rounded-xl p-4 flex items-start gap-3">
+                        <i class="fa-solid fa-circle-exclamation text-brand-red mt-0.5"></i>
+                        <div>
+                            <h4 class="text-sm font-semibold text-brand-red">Payment Failed</h4>
+                            <p class="text-xs text-brand-red/80 mt-1">We couldn't process your last payment. Please update your billing info.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-brand-blue/10 border border-brand-blue/30 rounded-xl p-4 flex items-start gap-3">
+                        <i class="fa-solid fa-circle-info text-brand-blue mt-0.5"></i>
+                        <div>
+                            <h4 class="text-sm font-semibold text-brand-blue">System Update</h4>
+                            <p class="text-xs text-brand-blue/80 mt-1">VFX Suite will be undergoing maintenance on Sunday at 2 AM EST.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+</body>
+</html>
